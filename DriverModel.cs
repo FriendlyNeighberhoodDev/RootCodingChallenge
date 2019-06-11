@@ -46,12 +46,17 @@ namespace DriverInformationReport
             }
             return totalTime;
         }
+
+        public string GetDriverReportData()
+        {
+            return GetTotalMiles() > 0 ? $"{DriverName}: {Convert.ToInt32(GetTotalMiles())} miles @ {Convert.ToInt32(GetAverageSpeed())} mph" : $"{DriverName}: 0 miles";
+        }
     }
 
     public class TripModel
     {
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public TimeSpan StartTime { get; set; }
+        public TimeSpan EndTime { get; set; }
         public double Miles { get; set; }
     }
 }

@@ -6,7 +6,8 @@ namespace DriverInformationReport
     {
         static void Main(string[] args)
         {
-            BusinessLogic.GetDriverInformationReport(args);
+            string[] array = { @"C:\temp\TestFile.txt" };
+            BusinessLogic.GetDriverInformationReport(array);
         }
     }
 }
